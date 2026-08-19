@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed Mohamed — Machine Learning Developer</title>
+<style>
+:root{--bg:#060914;--panel:#0c1222;--line:#1b2740;--text:#f4f7ff;--muted:#8e9bb2;--accent:#6c63ff;--cyan:#27d9ff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 80% 10%,#18205a 0,transparent 28%),var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(#ffffff05 1px,transparent 1px),linear-gradient(90deg,#ffffff05 1px,transparent 1px);background-size:45px 45px;mask-image:linear-gradient(to bottom,#000,transparent 80%)}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;background:#060914cc;backdrop-filter:blur(18px);border-bottom:1px solid #ffffff0d}
+.nav{max-width:1150px;margin:auto;padding:18px 24px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:900;font-size:20px;letter-spacing:-1px}.logo span{color:var(--cyan)}
+.links{display:flex;gap:28px}.links a{color:#aab6ca;text-decoration:none;font-size:14px}.links a:hover{color:white}
+section{max-width:1150px;margin:auto;padding:110px 24px}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:140px}
+.heroGrid{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center;width:100%}
+.kicker{display:flex;align-items:center;gap:10px;color:#9fa9ff;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}.dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 20px var(--cyan)}
+h1{font-size:clamp(48px,7vw,88px);line-height:.98;letter-spacing:-4px;margin-bottom:24px}
+.gradient{background:linear-gradient(90deg,#fff,var(--cyan),#8c7cff);-webkit-background-clip:text;color:transparent}
+.heroText{font-size:19px;color:var(--muted);max-width:650px}
+.actions{display:flex;gap:13px;margin-top:32px;flex-wrap:wrap}.btn{padding:13px 20px;border-radius:12px;text-decoration:none;font-weight:800;border:1px solid var(--line);transition:.25s}.primary{background:linear-gradient(135deg,var(--accent),#3c9cff);color:#fff;border:0;box-shadow:0 12px 35px #5f5bff33}.secondary{color:#dce5f4;background:#ffffff05}.btn:hover{transform:translateY(-3px)}
+.orb{height:390px;width:390px;border-radius:50%;margin:auto;background:radial-gradient(circle at 35% 30%,#5e7cff,transparent 28%),radial-gradient(circle,#172a67 0,#0d1737 48%,#080d1e 72%);border:1px solid #5262aa55;box-shadow:0 0 100px #4e5cff33,inset 0 0 80px #6c63ff22;display:grid;place-items:center;position:relative;animation:float 5s ease-in-out infinite}
+.orb:before,.orb:after{content:"";position:absolute;border:1px solid #3fbcff55;border-radius:50%;transform:rotate(35deg)}.orb:before{inset:35px}.orb:after{inset:70px;transform:rotate(-25deg)}
+.initials{font-size:92px;font-weight:900;letter-spacing:-8px;z-index:2}.mini{position:absolute;bottom:35px;right:15px;background:#0c1222dd;border:1px solid #ffffff18;padding:10px 14px;border-radius:12px;font-size:12px;color:#b8c6dc;z-index:3}
+@keyframes float{50%{transform:translateY(-12px)}}
+.sectionHead{margin-bottom:38px}.eyebrow{color:var(--cyan);font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase}.sectionTitle{font-size:42px;letter-spacing:-2px;margin-top:6px}.sectionDesc{color:var(--muted);margin-top:7px}
+.aboutGrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.panel{background:linear-gradient(145deg,#0e172a,#090f1d);border:1px solid var(--line);border-radius:20px;padding:28px}.panel p{color:#aab6ca}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}.stat{padding:18px;background:#ffffff04;border:1px solid #ffffff0b;border-radius:14px}.stat b{font-size:28px}.stat span{display:block;color:var(--muted);font-size:12px}
+.skills{display:flex;flex-wrap:wrap;gap:12px}.skill{padding:12px 16px;border-radius:12px;background:#0d1629;border:1px solid #243354;color:#d9e3f3}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.project{background:linear-gradient(145deg,#0e172a,#090f1c);border:1px solid var(--line);border-radius:20px;padding:26px;position:relative;overflow:hidden;transition:.3s}.project:hover{transform:translateY(-7px);border-color:#5263aa}.project:after{content:"";position:absolute;width:120px;height:120px;background:#6c63ff18;border-radius:50%;right:-50px;top:-50px;filter:blur(8px)}
+.icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#6c63ff33,#27d9ff1c);border:1px solid #ffffff12;font-size:22px;margin-bottom:20px}.project h3{font-size:22px;margin-bottom:8px}.project p{color:var(--muted);font-size:15px}.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.tag{font-size:11px;color:#b9c7db;border:1px solid #243354;padding:5px 9px;border-radius:20px}
+.contact{text-align:center}.contactBox{max-width:800px;margin:auto;padding:55px 30px;background:linear-gradient(145deg,#111b37,#0b1223);border:1px solid #29395d;border-radius:25px;box-shadow:0 20px 70px #0005}.contactBox h2{font-size:44px;letter-spacing:-2px}.contactBox p{color:var(--muted);margin:10px auto 28px}.email{display:inline-block;color:white;background:linear-gradient(135deg,var(--accent),#3c9cff);padding:14px 22px;border-radius:12px;text-decoration:none;font-weight:800}
+footer{text-align:center;border-top:1px solid #ffffff0b;padding:28px;color:#64728b;font-size:13px}
+@media(max-width:800px){.links{display:none}.heroGrid,.aboutGrid{grid-template-columns:1fr}.hero{text-align:center}.heroText{margin:auto}.actions{justify-content:center}.orb{width:280px;height:280px}.initials{font-size:65px}.projects{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.sectionTitle{font-size:34px}}
+</style>
+</head>
+<body>
+<nav><div class="nav"><div class="logo">Ahmed<span>.</span>ML</div><div class="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div></div></nav>
+
+<section class="hero">
+<div class="heroGrid">
+<div>
+<div class="kicker"><span class="dot"></span> Machine Learning Developer</div>
+<h1>Building ideas with <span class="gradient">data & AI.</span></h1>
+<p class="heroText">I'm Ahmed Mohamed Abdelaziz. I create machine learning models that turn real-world data into useful predictions and intelligent solutions.</p>
+<div class="actions"><a class="btn primary" href="#projects">Explore My Work →</a><a class="btn secondary" href="mailto:ahmedelkot226@gmail.com">Let's Talk</a></div>
+</div>
+<div class="orb"><div class="initials">AM</div><div class="mini">Python · ML · Data</div></div>
+</div>
+</section>
+
+<section id="about">
+<div class="sectionHead"><div class="eyebrow">01 — About</div><h2 class="sectionTitle">A developer who learns by building.</h2></div>
+<div class="aboutGrid">
+<div class="panel"><p>I'm Ahmed Mohamed Abdelaziz, a Machine Learning Developer focused on building practical projects in prediction, classification, and data-driven applications.</p><div class="stats"><div class="stat"><b>5+</b><span>ML Projects</span></div><div class="stat"><b>10</b><span>Clothing Classes</span></div><div class="stat"><b>ML</b><span>Focus Area</span></div></div></div>
+<div class="panel"><p>I enjoy taking a dataset, understanding the problem, preparing the data, training a model, and turning the result into something people can actually use.</p></div>
+</div>
+</section>
+
+<section id="skills">
+<div class="sectionHead"><div class="eyebrow">02 — Skills</div><h2 class="sectionTitle">Tools I work with.</h2></div>
+<div class="skills"><div class="skill">Python</div><div class="skill">Machine Learning</div><div class="skill">Data Analysis</div><div class="skill">Data Preprocessing</div><div class="skill">Classification</div><div class="skill">Regression</div><div class="skill">Feature Engineering</div></div>
+</section>
+
+<section id="projects">
+<div class="sectionHead"><div class="eyebrow">03 — Projects</div><h2 class="sectionTitle">Things I've built.</h2><p class="sectionDesc">A selection of machine learning projects.</p></div>
+<div class="projects">
+<div class="project"><div class="icon">👕</div><h3>Clothing Classification</h3><p>Classifies clothing images into 10 different categories and displays the predicted name below the image.</p><div class="tags"><span class="tag">Computer Vision</span><span class="tag">Classification</span></div></div>
+<div class="project"><div class="icon">🏠</div><h3>House Price Prediction</h3><p>Predicts house prices from property-related features using a regression model.</p><div class="tags"><span class="tag">Regression</span><span class="tag">Prediction</span></div></div>
+<div class="project"><div class="icon">🚗</div><h3>Car Price Prediction</h3><p>Estimates car prices based on vehicle features and historical data.</p><div class="tags"><span class="tag">Regression</span><span class="tag">Data Analysis</span></div></div>
+<div class="project"><div class="icon">❤️</div><h3>Heart Disease Prediction</h3><p>Uses classification techniques to predict heart disease from input health-related data.</p><div class="tags"><span class="tag">Classification</span><span class="tag">ML</span></div></div>
+<div class="project"><div class="icon">🎓</div><h3>Student Grade Prediction</h3><p>Predicts student grades using academic and related input features.</p><div class="tags"><span class="tag">Prediction</span><span class="tag">Regression</span></div></div>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<div class="contactBox"><div class="eyebrow">04 — Contact</div><h2>Let's build something smart.</h2><p>Have an idea, project, or opportunity? I'd be happy to hear from you.</p><a class="email" href="mailto:ahmedelkot226@gmail.com">ahmedelkot226@gmail.com</a></div>
+</section>
+<footer>© 2026 Ahmed Mohamed Abdelaziz — Machine Learning Developer</footer>
+</body>
+</html>
